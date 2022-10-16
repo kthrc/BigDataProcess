@@ -37,15 +37,15 @@ cal_grade.append((int)(len(sum_list) * 0.85))
 row_id2 = 1
 for row in ws:
 	if row_id2 != 1:
-		if ws.cell(row = row_id2, column = 7).value >=sorted_list[cal_grade[0]]:
+		if ws.cell(row = row_id2, column = 7).value > sorted_list[cal_grade[0]]:
 			ws.cell(row = row_id2, column = 8).value = 'A+'
-		elif ws.cell(row = row_id2, column = 7).value >= sorted_list[cal_grade[1]]:
+		elif ws.cell(row = row_id2, column = 7).value > sorted_list[cal_grade[1]]:
 			ws.cell(row = row_id2, column = 8).value = 'A0'
-		elif ws.cell(row = row_id2, column = 7).value >= sorted_list[cal_grade[2]]:
+		elif ws.cell(row = row_id2, column = 7).value > sorted_list[cal_grade[2]]:
 			ws.cell(row = row_id2, column = 8).value = 'B+'
-		elif ws.cell(row = row_id2, column = 7).value >= sorted_list[cal_grade[3]]:
+		elif ws.cell(row = row_id2, column = 7).value > sorted_list[cal_grade[3]]:
 			ws.cell(row = row_id2, column = 8).value = 'B0'
-		elif ws.cell(row = row_id2, column = 7).value >= sorted_list[cal_grade[4]]:
+		elif ws.cell(row = row_id2, column = 7).value > sorted_list[cal_grade[4]]:
 			ws.cell(row = row_id2, column = 8).value = 'C+'
 		else:
 			ws.cell(row = row_id2, column = 8).value = 'C0'
