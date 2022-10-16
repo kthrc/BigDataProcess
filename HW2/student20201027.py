@@ -25,6 +25,8 @@ sorted_list = sorted(sum_list)
 sorted_list.reverse()
 
 #학점 비율 설정
+  
+row_id2 = 1
 
 cal_grade = []
 cal_grade.append((int)(len(sum_list) * 0.15))
@@ -33,20 +35,18 @@ cal_grade.append((int)(len(sum_list) * 0.5))
 cal_grade.append((int)(len(sum_list) * 0.7))
 cal_grade.append((int)(len(sum_list) * 0.85))
 
-
 #학점 계산
-row_id2 = 1
 for row in ws:
 	if row_id2 != 1:
-		if ws.cell(row = row_id2, column = 7).value > sorted_list[cal_grade[0]]:
+		if ws.cell(row = row_id2, column = 7).value > round(sorted_list[cal_grade[0]], 1):
 			ws.cell(row = row_id2, column = 8).value = 'A+'
-		elif ws.cell(row = row_id2, column = 7).value > sorted_list[cal_grade[1]]:
+		elif ws.cell(row = row_id2, column = 7).value > round(sorted_list[cal_grade[1]], 1):
 			ws.cell(row = row_id2, column = 8).value = 'A0'
-		elif ws.cell(row = row_id2, column = 7).value > sorted_list[cal_grade[2]]:
+		elif ws.cell(row = row_id2, column = 7).value > round(sorted_list[cal_grade[2]], 1):
 			ws.cell(row = row_id2, column = 8).value = 'B+'
-		elif ws.cell(row = row_id2, column = 7).value > sorted_list[cal_grade[3]]:
+		elif ws.cell(row = row_id2, column = 7).value > round(sorted_list[cal_grade[3]], 1):
 			ws.cell(row = row_id2, column = 8).value = 'B0'
-		elif ws.cell(row = row_id2, column = 7).value > sorted_list[cal_grade[4]]:
+		elif ws.cell(row = row_id2, column = 7).value > round(sorted_list[cal_grade[4]], 1):
 			ws.cell(row = row_id2, column = 8).value = 'C+'
 		else:
 			ws.cell(row = row_id2, column = 8).value = 'C0'
