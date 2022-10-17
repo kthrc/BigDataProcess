@@ -29,11 +29,11 @@ sorted_list.reverse()
 row_id2 = 1
 
 cal_grade = []
-cal_grade.append((int)(len(sum_list) * 0.15))
-cal_grade.append((int)(len(sum_list) * 0.3))
-cal_grade.append((int)(len(sum_list) * 0.5))
-cal_grade.append((int)(len(sum_list) * 0.7))
-cal_grade.append((int)(len(sum_list) * 0.85))
+cal_grade.append((int)((len(sum_list) * 0.15) // 1))
+cal_grade.append((int)((len(sum_list) * 0.3) // 1))
+cal_grade.append((int)((len(sum_list) * 0.5) // 1))
+cal_grade.append((int)((len(sum_list) * 0.7) // 1))
+cal_grade.append((int)((len(sum_list) * 0.85) // 1))
 
 #학점 계산
 for row in ws:
