@@ -50,7 +50,7 @@ for row in ws:
 			ws.cell(row = row_id2, column = 8).value = 'B+'
 		elif ws.cell(row = row_id2, column = 7).value > (sorted_list[cal_grade[3]]):
 			ws.cell(row = row_id2, column = 8).value = 'B0'
-		elif ws.cell(row = row_id2, column = 7).value > (sorted_list[cal_grade[4]]):
+		elif ws.cell(row = row_id2, column = 7).value >= (sorted_list[cal_grade[4]]):
 			ws.cell(row = row_id2, column = 8).value = 'C+'
 		else:
 			ws.cell(row = row_id2, column = 8).value = 'C0'
