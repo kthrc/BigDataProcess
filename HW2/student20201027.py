@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 import openpyxl
-import math 
 
 wb = openpyxl.load_workbook( "student.xlsx" )
 ws = wb['Sheet1']
@@ -30,32 +29,30 @@ sorted_list.reverse()
 row_id2 = 1
 length = len(sum_list)
 cal_grade = []
-cal_grade.append(math.trunc(length * 0.15))
-cal_grade.append(math.trunc(length * 0.3)) 
-cal_grade.append(math.trunc(length * 0.5))
-cal_grade.append(math.trunc(length *0.7))
-cal_grade.append(math.trunc(length *0.85))
-
+cal_grade.append((int)(length * 0.3)) 
+cal_grade.append((int)(length *0.7))
+cal_grade.append((int)(length))
 #학점 계산
 
 row_id2 = 1
 
 for row in ws:
 	if row_id2 != 1:
-		if ws.cell(row = row_id2, column = 7).value > (sorted_list[cal_grade[0]]):
-			ws.cell(row = row_id2, column = 8).value = 'A+'
-		elif ws.cell(row = row_id2, column = 7).value > (sorted_list[cal_grade[1]]):
-			ws.cell(row = row_id2, column = 8).value = 'A0'
-		elif ws.cell(row = row_id2, column = 7).value > (sorted_list[cal_grade[2]]):
-			ws.cell(row = row_id2, column = 8).value = 'B+'
-		elif ws.cell(row = row_id2, column = 7).value > (sorted_list[cal_grade[3]]):
-			ws.cell(row = row_id2, column = 8).value = 'B0'
-		elif ws.cell(row = row_id2, column = 7).value >= (sorted_list[cal_grade[4]]):
-			ws.cell(row = row_id2, column = 8).value = 'C+'
+		if ws.cell(row = row_id2, column = 7).value <= (sorted_list[cal_grade[0]]):
+			if ws.cell(row = row_id2, column = 7).value <= (int)(length * 0.3 *0.5): 
+				ws.cell(row = row_id2, column = 8).value = 'A+'
+			else:
+				ws.cell(row = row_id2, column = 8).value = 'A0'
+		elif ws.cell(row = row_id2, column = 7).value <= (sorted_list[cal_grade[1]]):
+			if ws.cell(row = row_id2, column = 7).value <= (int)(length * 0.7 * 0.5):
+				ws.cell(row = row_id2, column = 8).value = 'B+'
+			else:
+				ws.cell(row = row_id2, column = 8).vlaue = 'B0'
 		else:
-			ws.cell(row = row_id2, column = 8).value = 'C0'
-	row_id2 += 1
-
+			if ws.cell(row = row_id2, column = 7).value <= (int)(length * 0.5):
+				ws.cell(row=row_id2, column = 8).value = 'C+'
+			else:
+				ws.cell(row = row_id2, column=8).value = 'C0'	
 
 
 wb.save("student.xlsx")
