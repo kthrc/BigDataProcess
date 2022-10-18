@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import openpyxl
+import math 
 
 wb = openpyxl.load_workbook( "student.xlsx" )
 ws = wb['Sheet1']
@@ -27,15 +28,18 @@ sorted_list.reverse()
 #학점 비율 설정
   
 row_id2 = 1
-
+length = len(sum_list)
 cal_grade = []
-cal_grade.append(round(len(sum_list) * 0.15))
-cal_grade.append(round(len(sum_list) * 0.3))
-cal_grade.append(round(len(sum_list) * 0.5))
-cal_grade.append(round(len(sum_list) * 0.7))
-cal_grade.append(round(len(sum_list) * 0.85))
-print(cal_grade)
+cal_grade.append(math.trunc(length * 0.15))
+cal_grade.append(math.trunc(length * 0.3)) 
+cal_grade.append(math.trunc(length * 0.5))
+cal_grade.append(math.trunc(length *0.7))
+cal_grade.append(math.trunc(length *0.85))
+
 #학점 계산
+
+row_id2 = 1
+
 for row in ws:
 	if row_id2 != 1:
 		if ws.cell(row = row_id2, column = 7).value > (sorted_list[cal_grade[0]]):
