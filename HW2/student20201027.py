@@ -42,7 +42,7 @@ for row in ws:
 			ws.cell(row = row_id2, column = 8).value = 'A+'
 		elif ws.cell(row = row_id2, column = 7).value > (sorted_list[cal_grade[1]]):
 			ws.cell(row = row_id2, column = 8).value = 'A0'
-		elif ws.cell(row = row_id2, column = 7).value > (sorted_list[cal_grade[2]]):
+		elif ws.cell(row = row_id2, column = 7).value >= (sorted_list[cal_grade[2]]):
 			ws.cell(row = row_id2, column = 8).value = 'B+'
 		elif ws.cell(row = row_id2, column = 7).value > (sorted_list[cal_grade[3]]):
 			ws.cell(row = row_id2, column = 8).value = 'B0'
