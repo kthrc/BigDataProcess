@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 import openpyxl
-import math
 
 wb = openpyxl.load_workbook( "student.xlsx" )
 ws = wb['Sheet1']
@@ -30,11 +29,11 @@ sorted_list.reverse()
 length = len(sum_list)
 
 cal_grade = []
-cal_grade.append(math.trunc(length * 0.15))
-cal_grade.append(math.trunc(length * 0.3))
-cal_grade.append(math.trunc((math.trunc(length * 0.7) + math.trunc(length * 0.3)) * 0.5))
-cal_grade.append(math.trunc(length * 0.7))
-cal_grade.append(math.trunc((math.trunc(length * 1) + math.trunc(length * 0.7)) * 0.5))
+cal_grade.append((int)(length * 0.15))
+cal_grade.append((int)(length * 0.3))
+cal_grade.append((int)(((int)(length * 0.7) + (int)(length * 0.3)) * 0.5))
+cal_grade.append((int)(length * 0.7))
+cal_grade.append((int)(((int)(length * 1) + (int)(length * 0.7)) * 0.5))
 
 #print(cal_grade)
 
