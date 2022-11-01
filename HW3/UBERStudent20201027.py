@@ -29,7 +29,7 @@ with open(input) as datafile:
 	
 		strr = base + "," + dayofweek[date]
 
-		if str not in vdic:
+		if strr not in vdic:
 			vdic[strr] = vehicles 
 			tdic[strr] = trips
 		else:
