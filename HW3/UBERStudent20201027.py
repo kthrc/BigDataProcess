@@ -11,16 +11,15 @@ vdic = dict()
 tdic = dict()
 # uber.txt 읽어오기
 
-with open(input) as datafile:
-	data = datafile.read()
+with open(input, "rt") as datafile:
 
-	rows = data.split('\n')
-	for row in rows:
-		dataList = row.split(',')
+#	rows = data.split('\n')
+	for row in datafile:
+		dataList = row.split(",")
 		base = dataList[0]
-		year = int(dataList[1].split('/')[2])	
-		month = int(dataList[1].split('/')[0])
-		day = int(dataList[1].split('/')[1]) 
+		year = int(dataList[1].split("/")[2])	
+		month = int(dataList[1].split("/")[0])
+		day = int(dataList[1].split("/")[1]) 
 		
 		date = calendar.weekday(year,month,day)
 
